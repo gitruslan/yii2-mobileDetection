@@ -9,7 +9,7 @@ namespace rlabuta\mobiledetect;
 
 use Yii;
 use yii\base\Component;
-use rlabuta\mobiledect\lib\MobileDetectLibrary;
+use rlabuta\mobiledetect\lib\MobileDetectLibrary;
 
 class MobileDetect extends Component
 {
