@@ -1,0 +1,25 @@
+{
+    "name": "rlabuta/mobiledetect",
+    "type": "library",
+    "description": "Detect mobile device",
+    "keywords": ["mobile", "device", "environment"],
+    "homepage": "https://github.com/gitruslan/yii2-mobileDetection",
+    "license" : "BSD",
+    "authors" : [
+        {
+            "name": "Labuta Ruslan",
+            "email": "ryslanfree@yandex.ru",
+            "homepage": "http://www.site-is-easy.net"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "mobiledetect\\": "src/"
+        }
+    }
+}
