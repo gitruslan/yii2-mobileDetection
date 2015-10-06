@@ -1,5 +1,5 @@
 {
-    "name": "rlabuta/mobiledetect",
+    "name": "rlabuta/yii2-mobiledetect",
     "type": "library",
     "description": "Detect mobile device",
     "keywords": ["mobile", "device", "environment"],
@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "mobiledetect\\": "src/"
+            "rlabuta\\mobiledetect\\": ""
         }
     },
     "extra": {
