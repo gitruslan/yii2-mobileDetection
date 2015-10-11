@@ -12,8 +12,10 @@ use yii\base\Component;
 use yii\helpers\Url;
 use rlabuta\mobiledetect\lib\MobileDetectLibrary;
 
-class MobileDetect extends Component
+class MobileDetect extends \yii\base\Module
 {
+
+    public $controllerNamespace = 'rlabuta\mobiledetect';
     /**
      * @var Init redirect to mobile
      * version to specify address
@@ -31,6 +33,7 @@ class MobileDetect extends Component
      */
     public function init()
     {
+        parent::init();
         $this->_mobileDetectLibrary = new MobileDetectLibrary();
 
         // Auto-redirect to mobile version
@@ -46,6 +49,7 @@ class MobileDetect extends Component
      */
     public function redirectToMobile($url = '')
     {
+        // Prevent loop page redirect
         if ((URL::base(true) === $url)
             || (URL::base(true) === $this->autoRedirectToMobile))
         {

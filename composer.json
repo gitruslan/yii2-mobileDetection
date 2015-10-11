@@ -1,5 +1,5 @@
 {
-    "name": "rlabuta/yii2-mobiledetect",
+    "name": "rlabuta/mobiledetect",
     "type": "library",
     "description": "Detect mobile device",
     "keywords": ["mobile", "device", "environment"],
@@ -23,8 +23,9 @@
         }
     },
     "extra": {
+        "bootstrap": "rlabuta\\mobiledetect\\Bootstrap",
         "branch-alias": {
-            "dev-live": "1.0-dev"
+            "dev-live": "1.0.x-dev"
         }
     }
 }
