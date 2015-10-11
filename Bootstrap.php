@@ -7,6 +7,10 @@
  */
 namespace rlabuta\mobiledetect;
 
+use Prophecy\Exception\InvalidArgumentException;
+use yii\base\InvalidConfigException;
+use yii\helpers\ArrayHelper;
+
 class Bootstrap implements \yii\base\BootstrapInterface
 {
     /**
@@ -14,9 +18,14 @@ class Bootstrap implements \yii\base\BootstrapInterface
      */
     public function bootstrap($app)
     {
-        $app->setModule('mobiledetect', [
-            'class' => 'rlabuta\mobiledetect\MobileDetect'
-        ]);
+        // Check if we have agreed for mobile auto redirect
+        if(!isset($app->params['mobiledetect'])
+            || !is_array($app->params['mobiledetect']))
+            return;
+
+        $configData = ArrayHelper::merge(
+            ['class' => 'rlabuta\mobiledetect\Module'],$app->params['mobiledetect']);
+        $app->setModule('mobiledetect',$configData);
         $app->getModule('mobiledetect');
     }
 

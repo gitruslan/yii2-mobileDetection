@@ -3,9 +3,12 @@ mobile detection for yii2 advanced version
 
 #Initialisation
 
-Add code below In you config file in section components
+Add code below In you config file like additional params
 
-'mobileDetection' =>[
-    'class' => 'rlabuta\mobiledetect\MobileDetect',
-    'autoRedirectToMobile' => 'http://m.site',
-],
+...
+'params' => [
+    'mobiledetect' => [
+        'autoRedirectToMobile' => 'http://m.site'
+    ]
+]
+

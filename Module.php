@@ -12,7 +12,7 @@ use yii\base\Component;
 use yii\helpers\Url;
 use rlabuta\mobiledetect\lib\MobileDetectLibrary;
 
-class MobileDetect extends \yii\base\Module
+class Module extends \yii\base\Module
 {
 
     public $controllerNamespace = 'rlabuta\mobiledetect';
