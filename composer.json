@@ -1,6 +1,6 @@
 {
     "name": "rlabuta/mobiledetect",
-    "type": "library",
+    "type": "yii2-extension",
     "description": "Detect mobile device",
     "keywords": ["mobile", "device", "environment"],
     "homepage": "https://github.com/gitruslan/yii2-mobileDetection",
