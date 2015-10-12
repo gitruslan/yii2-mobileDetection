@@ -12,8 +12,9 @@
             "homepage": "http://www.site-is-easy.net"
         }
     ],
+    "minimum-stability": "dev",
     "require": {
-        "php": ">=5.3.2"
+        "yiisoft/yii2": "*"
     },
     "require-dev": {
         "yiisoft/yii2": "*"

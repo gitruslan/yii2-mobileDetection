@@ -26,7 +26,7 @@ class Bootstrap implements \yii\base\BootstrapInterface
         $configData = ArrayHelper::merge(
             ['class' => 'rlabuta\mobiledetect\Module'],$app->params['mobiledetect']);
         $app->setModule('mobiledetect',$configData);
-        $app->getModule('mobiledetect');
+        $app->getModule('mobiledetect')->init();
     }
 
 }
