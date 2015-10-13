@@ -11,7 +11,8 @@ php composer.phar require rlabuta/mobiledetect "*"
 
 "rlabuta/mobiledetect" : "*"
 
-If you get error like  ``...could not be found in any version`` during installation, try to add
+If you get error like  ``...could not be found in any version`` during installation,
+try to add
 
 "minimum-stability": "dev"
 
