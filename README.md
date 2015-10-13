@@ -1,7 +1,6 @@
 # Yii2 Mobile detection
 ===========================
-
-Extensions main library from http://mobiledetect.net/
+Main extensions library from http://mobiledetect.net/
 
 Installation
 ------------
