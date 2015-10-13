@@ -12,15 +12,20 @@ use yii\base\Component;
 use yii\helpers\Url;
 use rlabuta\mobiledetect\lib\MobileDetectLibrary;
 
-class Module extends \yii\base\Module
+class MobileDetect extends \yii\base\Module
 {
 
     public $controllerNamespace = 'rlabuta\mobiledetect';
     /**
-     * @var Init redirect to mobile
-     * version to specify address
+     * @var Init redirect to mobile version
+     * need to specify domain name
      */
     public $autoRedirectToMobile;
+    /**
+     * @var Init redirect to tablet version
+     * need to specify domain name
+     */
+    public $autoRedirectToTablet;
     /**
      * @var lib\MobileDetectLibrary
      * Object MobileDetectLibrary has main
@@ -41,6 +46,11 @@ class Module extends \yii\base\Module
         {
             $this->redirectToMobile();
         }
+        // Auto-redirect to tablet version
+        if ($this->autoRedirectToTablet)
+        {
+            $this->redirectToTablet();
+        }
     }
 
     /**
@@ -58,6 +68,25 @@ class Module extends \yii\base\Module
         // Detect mobile device
         if ($this->_mobileDetectLibrary->isMobile()) {
             $url = (!empty($url)) ? $url : $this->autoRedirectToMobile;
+            \Yii::$app->response->redirect($url.\Yii::$app->request->url);
+        }
+    }
+
+    /**
+     * Redirect to mobile version to
+     * specify url in parameter [$autoRedirectToMobile] or $url
+     */
+    public function redirectToTablet($url = '')
+    {
+        // Prevent loop page redirect
+        if ((URL::base(true) === $url)
+            || (URL::base(true) === $this->autoRedirectToTablet))
+        {
+            return;
+        }
+        // Detect tablet device
+        if ($this->_mobileDetectLibrary->isTablet()) {
+            $url = (!empty($url)) ? $url : $this->autoRedirectToTablet;
             \Yii::$app->response->redirect($url.\Yii::$app->request->url);
         }
     }

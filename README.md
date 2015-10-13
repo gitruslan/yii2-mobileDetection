@@ -1,12 +1,13 @@
-# yii2-mobileDetection
-mobile detection for yii2 advanced version
+# Yii2 Mobile detection
 
 #Initialisation
-##Add code below In you config file like additional params
+##Add code below In your ``config`` file like additional params
+```php
 ...
 'params' => [
     'mobiledetect' => [
-        'autoRedirectToMobile' => 'http://m.site'
+        'autoRedirectToMobile' => 'http://m.site',
+        'autoRedirectToTablet' => 'http://tablet.site',
     ]
 ]
-
+```
